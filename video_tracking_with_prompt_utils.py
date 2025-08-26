@@ -742,15 +742,6 @@ class AsyncVideoFileLoaderWithTorchCodec:
     ):  
 
         start = time.time()
-        # Check whether GPU-accelerated decoding is available (and fall back to CPU decoding)
-        # if gpu_acceleration:
-        #     logging.warning(
-        #         "For the public version of TorchCodec, GPU-accelerated decoding is not available"
-        #         "yet but is coming soon (see https://github.com/pytorch/torchcodec/pull/196)."
-        #         "gpu_acceleration is turned off for now."
-        #     )
-        #     gpu_acceleration = False
-        #     gpu_device = None
 
         # Check and possibly infer the output device (and also get its GPU id when applicable)
         assert gpu_device is None or gpu_device.type == "cuda"
